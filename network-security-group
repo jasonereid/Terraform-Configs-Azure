@@ -1,0 +1,39 @@
+terraform {
+
+  required_version = ">=0.12"
+
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "~>2.0"
+    }
+  }
+}
+
+provider "azurerm" {
+  subscription_id = "your subscription ID here"
+  features {}
+}
+
+resource "azurerm_network_security_group" "example" {
+  name                = "network security group name here"
+  location            = "centralus"
+  resource_group_name = "your resource group name here"
+
+  security_rule {
+    name                       = "allow 443"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "443"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+
+  tags = {
+    environment = "Production"
+	BuildBy = "Jason Reid"
+  }
+}
