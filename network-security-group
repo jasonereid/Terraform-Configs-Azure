@@ -11,14 +11,14 @@ terraform {
 }
 
 provider "azurerm" {
-  subscription_id = "your subscription ID here"
+  subscription_id = var.subscription_id
   features {}
 }
 
 resource "azurerm_network_security_group" "example" {
-  name                = "network security group name here"
-  location            = "centralus"
-  resource_group_name = "your resource group name here"
+  name                = var.resource_name
+  location            = var.resource_group_location
+  resource_group_name = var.resource_group_name
 
   security_rule {
     name                       = "allow 443"
