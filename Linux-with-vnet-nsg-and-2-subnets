@@ -1,9 +1,7 @@
-# don't forget to setup your variables.tf. Also, you need an output.tf file if you want to capture the ssh key:
+# don't forget to setup your variables.tf. run this command to capture your ssh keys:
+# terraform output -raw tls_private_key > id_rsa
 #
-#output "tls_private_key" {
-#  value     = tls_private_key.example_ssh.private_key_pem
-#  sensitive = true
-#}
+
 
 
 
