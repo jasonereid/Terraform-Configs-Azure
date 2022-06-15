@@ -1,4 +1,5 @@
 # don't forget to setup your variables.tf!
+# run this to generate your ssh key - terraform output -raw tls_private_key > id_rsa
 
 terraform {
 
