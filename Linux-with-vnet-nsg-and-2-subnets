@@ -1,4 +1,5 @@
-# don't forget to setup your variables.tf. run this command to capture your ssh keys:
+# don't forget to setup your variables.tf. https://github.com/jasonereid/Terraform-Configs-Azure/blob/main/variables_1
+# run this command to capture your ssh keys:
 # terraform output -raw tls_private_key > id_rsa
 #
 
